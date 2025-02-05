@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảnh Báo Trang Lừa Đảo</title>
+    <style>
+        /* [Previous styles remain the same until slideshow styles] */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #ff4444;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .evidence {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .visit-counter {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        /* Enhanced Slideshow styles */
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: 20px auto;
+            background: #000;
+            border-radius: 5px;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            position: relative;
+        }
+        .slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0.4;}
+            to {opacity: 1;}
+        }
+        .slide img {
+            width: 100%;
+            height: 450px; /* Fixed height for consistency */
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .slide-caption {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background: rgba(0, 0, 0, 0.6);
+            border: none;
+            border-radius: 3px;
+            transition: 0.3s ease;
+            z-index: 1;
+        }
+        .next {
+            right: 0;
+        }
+        .prev {
+            left: 0;
+        }
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+        .dots-container {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .dot.active {
+            background-color: #fff;
+            transform: scale(1.2);
+        }
+        .slide-number {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚠️ Cảnh Báo Lừa Đảo ⚠️</h1>
+            <p>Trang thông tin cộng đồng về các hoạt động lừa đảo trực tuyến</p>
+        </div>
+
+        <h2>🔍 Bằng chứng và cảnh báo</h2>
+        <div class="slideshow-container">
+            <!-- Slides -->
+            <div class="slide active">
+                <div class="slide-number">1 / 10</div>
+                <img src="/api/placeholder/800/450" alt="Trang web giả mạo ngân hàng">
+                <div class="slide-caption">Trang web giả mạo ngân hàng yêu cầu đăng nhập để đánh cắp thông tin</div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-number">2 / 10</div>
+                <img src="/api/placeholder/800/450" alt="Tin nhắn lừa đảo">
+                <div class="slide-caption">Tin nhắn giả mạo thông báo trúng thưởng yêu cầu nộp phí</div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-number">3 / 10</div>
+                <img src="/api/placeholder/800/450" alt="Quảng cáo đầu tư">
+                <div class="slide-caption">Quảng cáo đầu tư với lợi nhuận phi thực tế</div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-number">4 / 10</div>
+                <img src="/api/placeholder/800/450" alt="Giao diện app lừa đảo">
+                <div class="slide-caption">Ứng dụng giả mạo với giao diện giống ngân hàng thật</div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-number">5 / 10</div>
+                <img src="/api/placeholder/800/450" alt="Tin nhắn lừa đảo việc làm">
+                <div class="slide-caption">Tin nhắn lừa đảo tuyển dụng việc làm online</div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-number">6 / 10</div>
+                <img src="/api/placeholder/800/450" alt="Web shop giả">
+                <div class="slide-caption">Website bán hàng giả mạo với giá siêu rẻ</div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-number">7 / 10</div>
+                <img src="/api/placeholder/800/450" alt="Tin nhắn giả mạo shipper">
+                <div class="slide-caption">Tin nhắn giả mạo shipper yêu cầu chuyển tiền phí ship</div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-number">8 / 10</div>
+                <img src="/api/placeholder/800/450" alt="Quảng cáo vay tiền">
+                <div class="slide-caption">Quảng cáo cho vay tiền với lãi suất thấp giả mạo</div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-number">9 / 10</div>
+                <img src="/api/placeholder/800/450" alt="Mail lừa đảo">
+                <div class="slide-caption">Email giả mạo thông báo tài khoản bị khóa</div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-number">10 / 10</div>
+                <img src="/api/placeholder/800/450" alt="Mã QR lừa đảo">
+                <div class="slide-caption">Mã QR độc hại dẫn đến trang web lừa đảo</div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <button class="prev" onclick="changeSlide(-1)">❮</button>
+            <button class="next" onclick="changeSlide(1)">❯</button>
+
+            <!-- Dots -->
+            <div class="dots-container">
+                <span class="dot active" onclick="showSlide(0)"></span>
+                <span class="dot" onclick="showSlide(1)"></span>
+                <span class="dot" onclick="showSlide(2)"></span>
+                <span class="dot" onclick="showSlide(3)"></span>
+                <span class="dot" onclick="showSlide(4)"></span>
+                <span class="dot" onclick="showSlide(5)"></span>
+                <span class="dot" onclick="showSlide(6)"></span>
+                <span class="dot" onclick="showSlide(7)"></span>
+                <span class="dot" onclick="showSlide(8)"></span>
+                <span class="dot" onclick="showSlide(9)"></span>
+            </div>
+        </div>
+
+        <h2>⚠️ Dấu hiệu nhận biết lừa đảo</h2>
+        <ul>
+            <li>Tin nhắn, email hoặc cuộc gọi yêu cầu cung cấp thông tin cá nhân</li>
+            <li>Thông báo trúng thưởng đột ngột, yêu cầu đóng phí để nhận thưởng</li>
+            <li>Lời mời đầu tư với lãi suất cao phi thực tế</li>
+            <li>Website giả mạo có giao diện giống trang chính thống</li>
+            <li>Tin nhắn giả mạo từ ngân hàng yêu cầu cập nhật thông tin</li>
+        </ul>
+
+        <div class="visit-counter">
+            <p>Số lượt truy cập: <span id="visitCount">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+
+        function showSlide(n) {
+            // Reset current slide
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            // Update current slide
+            currentSlide = n;
+            
+            // Loop back to first/last slide if needed
+            if (currentSlide >= slides.length) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(n) {
+            showSlide(currentSlide + n);
+        }
+
+        // Auto advance slides every 5 seconds
+        setInterval(() => changeSlide(1), 5000);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Visit counter
+        document.addEventListener('DOMContentLoaded', function() {
+            let visits = localStorage.getItem('visitCount') || 0;
+            visits = parseInt(visits) + 1;
+            localStorage.setItem('visitCount', visits);
+            document.getElementById('visitCount').textContent = visits;
+        });
+    </script>
+</body>
+</html>
